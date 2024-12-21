@@ -4,6 +4,8 @@
 
     <h1>{{ msg }}</h1>
 
+    <listUser />
+
     <CompFooter />
   </div>
 </template>
@@ -11,8 +13,9 @@
 <script>
 import CompHeader from './components/CompHeader.vue'
 import CompFooter from './components/CompFooter.vue'
+import ListUser from './components/ListUser.vue'
 export default {
-  components: { CompHeader, CompFooter },
+  components: { CompHeader, CompFooter, ListUser },
   name: 'app',
   data () {
     return {
