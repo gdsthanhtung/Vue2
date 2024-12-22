@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <CompHeader />
+    <CompHeader v-bind:msgHeader="msgHeader" />
 
     <h1>{{ msg }}</h1>
 
-    <listUser />
+    <ListUser v-bind:listUser="listUser" />
 
-    <CompFooter />
+    <CompFooter v-bind:msgFooter="msgFooter" />
   </div>
 </template>
 
@@ -19,7 +19,15 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Main content'
+      msg: 'Main content',
+      msgHeader: 'Data from app.vue file send to CompHeader.vue file',
+      msgFooter: 'Data from app.vue file send to CompFooter.vue file',
+      listUser: [
+        {id: 1, name: 'User 1', age: 20, email: 'user1@gmail.com', active: true},
+        {id: 2, name: 'User 2', age: 21, email: 'user2@gmail.com', active: false},
+        {id: 3, name: 'User 3', age: 22, email: 'user3@gmail.com', active: true},
+        {id: 4, name: 'User 4', age: 23, email: 'user4@gmail.com', active: false}
+      ]
     }
   }
 }
@@ -51,5 +59,12 @@ li {
 
 a {
   color: #42b983;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1170px;
+  padding: 0 15px;
+  min-height: 3000px;
 }
 </style>
