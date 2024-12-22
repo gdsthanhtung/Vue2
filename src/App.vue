@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <CompHeader v-bind:msgHeader="msgHeader" />
+    <button v-on:click="changeMsg()">Change headder + footer msg!</button>
+
+    <CompHeader v-bind:msgHeader="msgHeader" v-on:changeMsgEvent="handleChangeMsg" />
 
     <h1>{{ msg }}</h1>
 
@@ -17,6 +19,15 @@ import ListUser from './components/ListUser.vue'
 export default {
   components: { CompHeader, CompFooter, ListUser },
   name: 'app',
+  methods: {
+    changeMsg () {
+      this.msgHeader = 'Header msg changed!'
+      this.msgFooter = 'Footer msg changed!'
+    },
+    handleChangeMsg (data) {
+      this.msgFooter = data.msg;
+    }
+  },
   data () {
     return {
       msg: 'Main content',
@@ -26,7 +37,9 @@ export default {
         {id: 1, name: 'User 1', age: 20, email: 'user1@gmail.com', active: true},
         {id: 2, name: 'User 2', age: 21, email: 'user2@gmail.com', active: false},
         {id: 3, name: 'User 3', age: 22, email: 'user3@gmail.com', active: true},
-        {id: 4, name: 'User 4', age: 23, email: 'user4@gmail.com', active: false}
+        {id: 4, name: 'User 4', age: 23, email: 'user4@gmail.com', active: false},
+        {id: 5, name: 'User 5', age: 22, email: 'user5@gmail.com', active: true},
+        {id: 6, name: 'User 6', age: 23, email: 'user6@gmail.com', active: false}
       ]
     }
   }

@@ -1,11 +1,6 @@
 <template>
   <div class="list-user">
-    <p>Comp list user</p>
-    <ul>
-      <li v-for="user in listUser" :key="user.id">
-        <User v-bind:user="user" />
-      </li>
-    </ul>
+    <User v-for="user in listUser" :key="user.id" v-bind:user="user" class="user" />
   </div>
 </template>
 
@@ -27,3 +22,18 @@ export default {
   }
 }
 </script>
+
+<style>
+  .list-user {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .list-user .user{
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid #09f;
+    width: calc(30% - 20px);
+  }
+</style>
