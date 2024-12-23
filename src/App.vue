@@ -6,7 +6,7 @@
 
     <h1>{{ msg }}</h1>
 
-    <ListUser v-bind:listUser="listUser" />
+    <ListUser v-bind:listUser="listUser" v-on:deleteUser="deleteUser" />
 
     <CompFooter v-bind:msgFooter="msgFooter" />
   </div>
@@ -26,6 +26,10 @@ export default {
     },
     handleChangeMsg (data) {
       this.msgFooter = data.msg;
+    },
+    deleteUser (user) {
+      console.log('delete user at app.vue', user)
+      this.listUser = this.listUser.filter(u => u.id !== user.id);
     }
   },
   data () {
