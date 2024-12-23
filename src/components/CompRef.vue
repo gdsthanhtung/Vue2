@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'Data',
+  name: 'CompRef',
   data() {
     return {
 

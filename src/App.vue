@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <button v-on:click="changeMsg()">Change headder + footer msg!</button>
+    <!-- <button v-on:click="changeMsg()">Change headder + footer msg!</button>
 
     <CompHeader v-bind:msgHeader="msgHeader" v-on:changeMsgEvent="handleChangeMsg" />
 
@@ -10,7 +10,12 @@
 
     <CompFooter v-bind:msgFooter="msgFooter" />
 
-    <CompRef />
+    <CompRef /> -->
+
+    <CompSlot>
+      <h4 slot="header">Header slot send from App.vue</h4>
+      <p slot="content">Content slot send from App.vue</p>
+    </CompSlot>
   </div>
 </template>
 
@@ -19,9 +24,16 @@ import CompHeader from './components/CompHeader.vue'
 import CompFooter from './components/CompFooter.vue'
 import ListUser from './components/ListUser.vue'
 import CompRef from './components/CompRef.vue'
+import CompSlot from './components/CompSlot.vue'
 
 export default {
-  components: { CompHeader, CompFooter, ListUser, CompRef },
+  components: {
+    CompHeader,
+    CompFooter,
+    ListUser,
+    CompRef,
+    CompSlot
+  },
   name: 'app',
   methods: {
     changeMsg () {
@@ -45,9 +57,9 @@ export default {
         {id: 1, name: 'User 1', age: 20, email: 'user1@gmail.com', active: true},
         {id: 2, name: 'User 2', age: 21, email: 'user2@gmail.com', active: false},
         {id: 3, name: 'User 3', age: 22, email: 'user3@gmail.com', active: true},
-        {id: 4, name: 'User 4', age: 23, email: 'user4@gmail.com', active: false},
-        {id: 5, name: 'User 5', age: 22, email: 'user5@gmail.com', active: true},
-        {id: 6, name: 'User 6', age: 23, email: 'user6@gmail.com', active: false}
+        // {id: 4, name: 'User 4', age: 23, email: 'user4@gmail.com', active: false},
+        // {id: 5, name: 'User 5', age: 22, email: 'user5@gmail.com', active: true},
+        // {id: 6, name: 'User 6', age: 23, email: 'user6@gmail.com', active: false}
       ]
     }
   }
