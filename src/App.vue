@@ -9,6 +9,8 @@
     <ListUser v-bind:listUser="listUser" v-on:deleteUser="deleteUser" />
 
     <CompFooter v-bind:msgFooter="msgFooter" />
+
+    <CompRef />
   </div>
 </template>
 
@@ -16,8 +18,10 @@
 import CompHeader from './components/CompHeader.vue'
 import CompFooter from './components/CompFooter.vue'
 import ListUser from './components/ListUser.vue'
+import CompRef from './components/CompRef.vue'
+
 export default {
-  components: { CompHeader, CompFooter, ListUser },
+  components: { CompHeader, CompFooter, ListUser, CompRef },
   name: 'app',
   methods: {
     changeMsg () {
